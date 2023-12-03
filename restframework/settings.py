@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'app',
     'drf_yasg',
-    'account'
+    'account',
+    'api'
 ]
 AUTH_USER_MODEL = 'account.CustomUser'
 MIDDLEWARE = [
@@ -114,6 +115,16 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+REST_FRAMEWORK = {
+    "NON_FIELD_ERRORS_KEY": "errors",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+
+    "PAGE_SIZE": 3,
+}
 
 
 # Static files (CSS, JavaScript, Images)
