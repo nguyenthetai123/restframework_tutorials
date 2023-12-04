@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'app',
     'drf_yasg',
     'account',
-    'api'
+    'api',
+    'teacher'
 ]
 AUTH_USER_MODEL = 'account.CustomUser'
 MIDDLEWARE = [
