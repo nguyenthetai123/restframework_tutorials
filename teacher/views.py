@@ -5,7 +5,7 @@ from .serializers import TeacherSerializer
 from .models import Teach
 from rest_framework import status
 from rest_framework.views import APIView
-
+from rest_framework import generics,mixins
 
 # Create your views here.
 
@@ -73,3 +73,12 @@ class TechDetail(APIView):
         tech = Teach.objects.get(pk=pk)
         tech.delete()
         return Response(status.HTTP_204_NO_CONTENT)
+
+
+class TechList(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Teach.objects.all()
+    serializer_class = TeacherSerializer
+
+class List(generics.GenericAPIView,mixins.CreateModelMixin):
+    queryset = Teach.objects.all()
+    serializer_class = TeacherSerializer
