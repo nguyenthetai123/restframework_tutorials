@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'account',
     'api',
     'teacher',
-    'core'
+    'core',
+    'rest_framework.authtoken'
 ]
 AUTH_USER_MODEL = 'account.CustomUser'
 MIDDLEWARE = [
