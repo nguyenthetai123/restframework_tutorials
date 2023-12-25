@@ -79,6 +79,9 @@ class TechList(generics.RetrieveUpdateDestroyAPIView):
     queryset = Teach.objects.all()
     serializer_class = TeacherSerializer
 
+
 class List(generics.GenericAPIView,mixins.CreateModelMixin):
     queryset = Teach.objects.all()
     serializer_class = TeacherSerializer
+
+

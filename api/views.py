@@ -14,6 +14,7 @@ def student_detail(request):
     stu = Student.objects.all()
     serializer = StudentSerializer(stu, many=True)
     json_data = JSONRenderer().render(serializer.data)
+
     return HttpResponse(json_data, content_type='application/json')
 
 @csrf_exempt
